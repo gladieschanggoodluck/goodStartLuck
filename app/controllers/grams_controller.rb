@@ -21,6 +21,11 @@ class GramsController < ApplicationController
 
   def gram_params
     params.require(:gram).permit(:message)
+    params.require(:gram).permit(:picture)
+  end
+
+  def index
+    @grams = Gram.all
   end
 
 end
