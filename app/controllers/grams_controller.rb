@@ -34,6 +34,7 @@ class GramsController < ApplicationController
   end
 
   def index
+     @grams = Gram.all
   end
 
   def show
