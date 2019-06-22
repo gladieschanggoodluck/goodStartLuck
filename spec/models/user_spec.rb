@@ -1,5 +1,10 @@
-require 'rails_helper'
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+  :recoverable, :rememberable, :trackable, :validatable
 
-RSpec.describe User, type: :model do
-  
-end
+  has_many :grams
+  has_many :comments
+end 
+
